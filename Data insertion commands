@@ -1,0 +1,48 @@
+insert all
+into patient (ssn ,fname,lname ,phone_number,sex,dob,files)values(111,'ahmad','alfahad',4444,'m','6-5-2000',1200)
+into patient (ssn ,fname,lname ,phone_number,sex,dob,files)values(222,'alanoud','alyahyaa',5555,'f','7-7-1998',1089)
+into patient (ssn ,fname,lname ,phone_number,sex,dob,files)values(333,'reem','talal',6666,'f','1-12-1987',1776)
+into patient (ssn ,fname,lname ,phone_number,sex,dob,files)values(444,'sara','alomar',3999,'f','3-5-1980',1654)
+select * from dual ;
+______________________________
+insert all
+into department(num, type)values(1,'doctor')
+into department(num , type)values(3,'nurse')
+into department(num , type)values(5,'reception')
+select * from dual ;
+____________________________
+
+insert all
+into employee (id ,fname,lname ,sex,salary,dob,dep_num)values(12,'khaled','bader','m',20000,'9-8-1970',1)
+into employee (id ,fname,lname ,sex,salary,dob,dep_num)values(13,'wala','nasser','f',10000,'17-6-1988',3)
+into employee (id ,fname,lname ,sex,salary,dob,dep_num)values(14,'jalal','sami','m',21000,'6-5-1967',1)
+into employee (id ,fname,lname ,sex,salary,dob,dep_num)values(15,'hind','saud','f',8000,'3-7-1984',5)
+into employee (id ,fname,lname ,sex,salary,dob,dep_num)values(16,'huda','abdulaah','f',11000,'14-11-1990',3)
+select * from dual ;
+_____________________
+insert into receptionist(id)values(15);
+____________________
+insert all
+into doctor (id,clinic_room)values (12,5)
+into doctor (id,clinic_room)values (14,6)
+select * from dual;
+___________________
+insert all
+into nurse (id,num_of_shift,nid)values(13,4,12)
+into nurse (id,num_of_shift,nid)values(16,3,14)
+select * from dual;
+___________________
+
+insert all
+into take (dates,times,did,p_ssn)values('12-8-2016','4am',12,111)
+into take (dates,times,did,p_ssn)values('12-8-2016','6am',14,222)
+into take (dates,times,did,p_ssn)values('13-8-2016','7pm',14,333)
+into take (dates,times,did,p_ssn)values('13-8-2016','8pm',12,444)
+select * from dual;
+__________________
+insert all
+into appointment (dates,times,drid,pssn)values('12-8-2016','4am',12,111)
+into appointment (dates,times,drid,pssn)values('12-8-2016','6am',14,222)
+into appointment (dates,times,drid,pssn)values('13-8-2016','7pm',14,333)
+into appointment (dates,times,drid,pssn)values('13-8-2016','8pm',12,444)
+select * from dual;
