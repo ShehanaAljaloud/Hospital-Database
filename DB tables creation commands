@@ -1,0 +1,54 @@
+create table department (
+num integer primary key ,
+type varchar2(10) );
+___________________
+
+create table employee (
+id int primary key ,
+fname varchar2(10), 
+lname varchar2(10),
+sex varchar2(10) ,
+salary int ,
+dob date ,
+dep_num int ,
+foreign key (dep_num ) references department (num));
+__________________
+create table doctor (
+id int primary key,
+clinic_room varchar2(10),
+foreign key (id) references employee (id));
+__________________
+create table nurse(
+id int primary key ,
+num_of_shift int ,
+nid int ,
+foreign key (nid) references doctor (id),
+foreign key (id) references employee (id));
+__________________
+create table receptionist (id int primary key ,
+foreign key (id) references employee (id));
+__________________
+create table patient (
+ssn number(5) primary key ,
+fname varchar2(10),
+lname varchar2(10),
+phone_number number(5) ,
+sex varchar2(10) , 
+dob varchar2(10) ,
+files integer );
+__________________
+create table appointment (
+dates varchar2(10) ,
+times varchar2(10),
+drid int ,pssn number(5),
+primary key (times,dates),
+foreign key (drid) references doctor (id),
+foreign key (pssn) references patient (ssn));
+__________________
+create table take ( dates varchar2(10) ,
+times varchar2(10),
+did int ,
+p_ssn number(5),
+primary key (times,dates,did,p_ssn),
+foreign key (did) references doctor (id),
+foreign key (p_ssn) references patient (ssn));
